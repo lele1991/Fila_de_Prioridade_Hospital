@@ -23,9 +23,7 @@ struct grafos{
 	vertice_t *vertices;
 	aresta_t **matriz_adj;	/* Matriz de adjacencia */
 };
-/*************************************
-* IMPLEMENTE AQUI A SUA PROVA
-/*************************************/
+
 void swap_string(grafo_t* grafo, int u, int v){
     char *temporario;
 
@@ -36,7 +34,7 @@ void swap_string(grafo_t* grafo, int u, int v){
 }
 
 void max_heapify(grafo_t *grafo, int i){
-    int j=0, maior =0;
+    int maior =0;
     int e = 2*i + 1;
     int d = 2*i + 2;
 
