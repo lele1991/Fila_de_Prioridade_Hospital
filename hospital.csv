@@ -1,38 +1,39 @@
-Vertice,Nome,Idade,Gravidade,Tipo
-0,Anisio Rodrigues Alves,95,,
-1,Maria do Carmo Geronimo,12,,
-2,Geraldo Tabuleta,5,,
-3,Silvina Rosa de Jesus,60,,
-4,Celanira Monteiro,30,
-5,Ana Martinha da Silva,25,
-6,Alipio Francelino da Silva,3,
-7,Maria Domingas Vaz de Lima,45,
-8,Etelvina Benancio dos Santos,100,
-9,Maria Olivia da Silva,82,
-10,Maria Gomes Valentim,24,
-11,Osorio Lopes de Santana,39,
-12,Doralina Borba,27,
-13,Deraldo Magno Santos,55,
-14,Francisco Mateus de Santana,14,
-15,Presolina Coelho,11,
-16,Rosa Teixeira Lima,56,
-17,Placida do Livramento,32,
-18,Maria Benedita da Conceicao,51,
-19,Liberalino Ferreira Leite,77,
-20,Leticia Ferreira de Souza,63,
-21,Maria Etelvina dos Santos,29,
-22,Maria Rita de Menezes,43,
-23,Adao da Silva,22,
-24,Maria de Xango,36,
-25,Pedra Bento,101,
-26,Maximiano Jose dos Santos,73,
-27,Diesson Stefano Allebrandt,22,
-28,Ana Claudia Banderchuk, 21,,
-29,Felipe Broering,21,,
-30,Hellen Avila Rosa,22,
-31,Leticia de Oliveira Nunes,27,
-32,Daniel Lohmann,40,
-
-
-
-//u=urgente		l=leve		m=moderado
+id,Nome,Idade,Gravidade,Tipo
+0,Anisio Rodrigues Alves,95,u,t
+1,Maria do Carmo Geronimo,12,l,c
+2,Geraldo Tabuleta,5,m,c
+3,Silvina Rosa de Jesus,60,l,t
+4,Celanira Monteiro,30,l,i
+5,Ana Martinha da Silva,25,u,c 	 
+6,Alipio Francelino da Silva,3,u,c
+7,Maria Domingas Vaz de Lima,45,u,t
+8,Etelvina Benancio dos Santos,100,u,i
+9,Maria Olivia da Silva,82,l,c
+10,Maria Gomes Valentim,24,l,c
+11,Osorio Lopes de Santana,39,m,t
+12,Doralina Borba,27,m,t
+13,Deraldo Magno Santos,55,l,t
+14,Francisco Mateus de Santana,14,l,i
+15,Presolina Coelho,11,u,i
+16,Rosa Teixeira Lima,56,u,t
+17,Placida do Livramento,32,l,c
+18,Maria Benedita da Conceicao,51,l,c
+19,Liberalino Ferreira Leite,77,l,t
+20,Leticia Ferreira de Souza,63,l,i
+21,Maria Etelvina dos Santos,29,m,c
+22,Maria Rita de Menezes,43,m,t
+23,Adao da Silva,22,l,t
+24,Maria de Xango,36,m,i
+25,Pedra Bento,101,l,i
+26,Maximiano Jose dos Santos,73,m,t
+27,Diesson Stefano Allebrandt,22,u,c
+28,Ana Claudia Banderchuk, 21,u,c
+29,Felipe Broering,21,l,t
+30,Hellen Avila Rosa,22,m,i
+31,Leticia de Oliveira Nunes,27,m,t
+32,Daniel Lohmann,40,m,t
+33,Hazael dos Santos Batista,21,l,c
+34,Alexsandro Gehlen,27,u,c
+35,Bruna Martini,22,l,i
+36,Maria Claudia Rosa Negri,22,l,i
+37,Vamile Sybrin,30,l,i

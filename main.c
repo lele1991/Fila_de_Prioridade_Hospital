@@ -7,11 +7,11 @@
 
 int main()
 {
-    lista_enc_t *lista;
-    lista = ler_arquivo("hospital.csv");
+    int tamanho;
+    leitura_dinamica(&tamanho);
 
-    imprimir_lista(lista);
-    libera_geral(lista);
+
+
 
 
     return 0;
