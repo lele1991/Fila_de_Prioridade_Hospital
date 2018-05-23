@@ -4,85 +4,21 @@
 	<ActiveTarget name="Debug" />
 	<File name="PRIORIDADE_HOSPITAL.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="229" topLine="0" />
+			<Cursor1 position="242" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="prioridade_hospital.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-<<<<<<< HEAD
-			<Cursor1 position="360" topLine="0" />
-=======
-	<File name="prioridade_hospital.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2191" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="lista_enc.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="82" topLine="0" />
->>>>>>> 809eb75606e45417b54362f394f4b2f8a40c13b6
-		</Cursor>
-	</File>
-<<<<<<< HEAD
-	<File name="grafo.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-<<<<<<< HEAD
-			<Cursor1 position="1474" topLine="64" />
-=======
-			<Cursor1 position="649" topLine="17" />
-=======
-	<File name="lista_enc.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="309" topLine="0" />
->>>>>>> Hellen
-=======
-			<Cursor1 position="2702" topLine="46" />
->>>>>>> Leticia
+			<Cursor1 position="5479" topLine="16" />
 		</Cursor>
 		<Folding>
+			<Collapse line="10" />
 			<Collapse line="23" />
-			<Collapse line="135" />
-			<Collapse line="163" />
 		</Folding>
 	</File>
 	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-<<<<<<< HEAD
-<<<<<<< HEAD
-			<Cursor1 position="309" topLine="0" />
->>>>>>> 809eb75606e45417b54362f394f4b2f8a40c13b6
+			<Cursor1 position="98" topLine="0" />
 		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-=======
->>>>>>> Hellen
-			<Cursor1 position="62" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PRIORIDADE_HOSPITAL.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="464" topLine="0" />
-		</Cursor>
-<<<<<<< HEAD
-	</File>
-	<File name="grafo.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="649" topLine="17" />
-		</Cursor>
-<<<<<<< HEAD
-=======
->>>>>>> 809eb75606e45417b54362f394f4b2f8a40c13b6
-=======
-	</File>
-	<File name="prioridade_hospital.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2195" topLine="65" />
-		</Cursor>
->>>>>>> Hellen
-=======
-			<Cursor1 position="197" topLine="0" />
-		</Cursor>
->>>>>>> Leticia
 	</File>
 </CodeBlocks_layout_file>

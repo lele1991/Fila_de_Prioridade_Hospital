@@ -18,23 +18,25 @@
 
 1526408574 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\no.h
 
-1527081990 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\main.c
+1527113571 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"PRIORIDADE_HOSPITAL.h"
 
-1527083047 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.h
+1527112054 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.h
 
 1526408574 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\no.c
 	<stdio.h>
 	<stdlib.h>
 	"no.h"
 
-1527083551 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.c
+1527113509 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
+	<math.h>
 	"PRIORIDADE_HOSPITAL.h"
 
 1526926967 source:c:\users\helle\documents\github\priorityqueue_hospital\grafo.c
