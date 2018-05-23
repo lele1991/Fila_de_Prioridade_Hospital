@@ -3,9 +3,6 @@
 #include <string.h>
 
 #include "PRIORIDADE_HOSPITAL.h"
-#include "lista_enc.h"
-#include "no.h"
-
 #define TAM_BUFFER 100
 #define DEBUG
 
@@ -18,8 +15,7 @@ struct paciente{
 };
 
 paciente_t *leitura_dinamica(int* tamanho){
-    //u=urgente		l=leve		m=moderado
-    //c= cabeça     t= tronco   i=inferiores
+
     FILE *fp;
     int linhas=0,i=0;
     char buffer[100];
@@ -34,8 +30,11 @@ paciente_t *leitura_dinamica(int* tamanho){
 
     //alocaçao pra saber quantidade de linhas
     while(fgets(buffer, 100, fp) != NULL) linhas++;
-    printf(" linhas: %d",linhas);
-     rewind(fp);
+    printf("linhas: %d\n",linhas);
+
+    printf("Legenda: *gravidade -- u->urgente  l->leve  m->moderado  // *tipo -- c->cabeca    t->tronco   i->inferiores\n");
+
+    rewind(fp);
 
      dados = malloc(sizeof(paciente_t)*linhas);
 
@@ -83,7 +82,7 @@ void prioridade_sort(paciente_t *dados, int tamanho){
     }
     int i=0;
 
-    while(i<)
+    //while(i<)
 
 
 
@@ -113,7 +112,7 @@ hospital_t *cria_hospital(int id, char *nome, int idade, char *gravidade, char *
 	}
 
     hospital->id = id;
-    /* Copia os dados para a lista alocada
+     Copia os dados para a lista alocada
     strncpy(hospital->nome, nome, strlen(nome) + 1);
     hospital->idade = idade;
     hospital->gravidade = gravidade;
