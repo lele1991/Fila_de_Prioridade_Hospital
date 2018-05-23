@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <math.h>
 
 #include "PRIORIDADE_HOSPITAL.h"
 #define TAM_BUFFER 100
-#define DEBUG
+//#define DEBUG
 
 struct paciente{
 	int id;
@@ -12,6 +14,11 @@ struct paciente{
 	int idade;
 	char gravidade;
 	char tipo;
+};
+
+struct heap{
+    int tam;
+    paciente_t *paciente;
 };
 
 paciente_t *leitura_dinamica(int* tamanho){
@@ -22,7 +29,7 @@ paciente_t *leitura_dinamica(int* tamanho){
     char buffer_nome[100];
     paciente_t *dados;
 
-    fp = fopen("hospital.csv", "r");
+    fp = fopen("hospital.csv", "r");printf("linhas: %d\n\n",linhas);
     if(fp==NULL){
         perror("fopen");
         exit(EXIT_FAILURE);
@@ -30,9 +37,12 @@ paciente_t *leitura_dinamica(int* tamanho){
 
     //alocaçao pra saber quantidade de linhas
     while(fgets(buffer, 100, fp) != NULL) linhas++;
-    printf("linhas: %d\n",linhas);
+#ifdef DEBUG
+printf("linhas: %d\n\n",linhas);
+#endif
 
-    printf("Legenda: *gravidade -- u->urgente  l->leve  m->moderado  // *tipo -- c->cabeca    t->tronco   i->inferiores\n");
+
+    printf("Legenda: *gravidade -- u->urgente  l->leve  m->moderado  // *tipo -- c->cabeca    t->tronco   i->inferiores\n\n");
 
     rewind(fp);
 
@@ -48,7 +58,6 @@ paciente_t *leitura_dinamica(int* tamanho){
     while(fgets(buffer,sizeof (buffer), fp)!= NULL){
         sscanf(buffer,"%*d,%100[^,],%*d,%*c,%*c\n", buffer_nome);//salva no buffer pra saber os tamanhos
         dados[i].nome = malloc(sizeof(char) * strlen(buffer_nome)+1);
-        //tamanho da variavel nome, * tamanho da string ("uva/o")
         i++;
     }
 
@@ -56,7 +65,8 @@ paciente_t *leitura_dinamica(int* tamanho){
 
     fgets(buffer,sizeof (buffer), fp); // pegando uma linha, "pulando a linha"
     i=0;
-     // copiar do arquivo para posicoes do vetor
+
+    // copiar do arquivo para posicoes do vetor
     while(fgets(buffer,sizeof (buffer), fp)!= NULL){
         sscanf(buffer, "%d,%100[^,],%d,%c,%c\n",
                &dados[i].id,
@@ -65,7 +75,9 @@ paciente_t *leitura_dinamica(int* tamanho){
                &dados[i].gravidade,
                &dados[i].tipo);
 
-        printf("%d; %s; %d; %c; %c\n",dados[i].id, dados[i].nome, dados[i].idade, dados[i].gravidade, dados[i].tipo);
+#ifdef DEBUG
+printf("%d; %s; %d; %c; %c\n",dados[i].id, dados[i].nome, dados[i].idade, dados[i].gravidade, dados[i].tipo);
+#endif // DEBUG
         i++;
     }
 
@@ -75,131 +87,94 @@ paciente_t *leitura_dinamica(int* tamanho){
 
 }
 
-void prioridade_sort(paciente_t *dados, int tamanho){
-    if (dados == NULL){
-        perror("main:");
-        exit(-1);
-    }
-    int i=0;
-
-    //while(i<)
-
-
+void heap(paciente_t *dados, heap_t *heap, int tamanho){
 
 
 
 }
 
+void build_heap(heap_t *heap, paciente_t *paciente, int tamanho){   //cria heap de pacientes
+    heap->tam = tamanho;
 
-//---------------------------------------------------------------------------------------------------------------------------------------------
-/*
-hospital_t *cria_hospital(int id, char *nome, int idade, char *gravidade, char *tipo){
-    hospital_t *hospital;
+    heap->paciente = malloc((sizeof paciente_t)*tamanho);   //cria espaço pro heap
+    memcpy(heap->paciente, paciente, sizeof(paciente_t)*tamanho); //copia pro heap
 
-    hospital = malloc(sizeof(hospital_t));
-
-    if (hospital == NULL){
-
-		perror("cria_hospital(struct)");
-		exit(EXIT_FAILURE);
-	}
-
-    hospital->nome = malloc(strlen(nome) + 1);
-
-	if (hospital == NULL){
-		perror("cria_hospital(nome)");
-		exit(EXIT_FAILURE);
-	}
-
-    hospital->id = id;
-     Copia os dados para a lista alocada
-    strncpy(hospital->nome, nome, strlen(nome) + 1);
-    hospital->idade = idade;
-    hospital->gravidade = gravidade;
-    hospital->tipo = tipo;
-
-    return hospital;
-}
-
-lista_enc_t *ler_arquivo(char *nome_arquivo){
-    char buffer[TAM_BUFFER];
-
-    int id;
-    char buffer_nome[TAM_BUFFER];
-	int idade;
-	char buffer_gravidade[TAM_BUFFER];
-	char buffer_tipo[TAM_BUFFER];
-
-    FILE *fp;
-
-    lista_enc_t *lista;
-    lista = cria_lista_enc();
-
-    no_t *no;
-    hospital_t *hospital;
-
-	fp = fopen(nome_arquivo, "r");
-
-	if (fp == NULL){
-		perror("ler_arquivo");
-		exit(EXIT_FAILURE);
-	}
-    sscanf(buffer, "%d, %99[^,], %d, %c, %c\n", &id, buffer_nome, &idade, buffer_gravidade, buffer_tipo);
-    while(fgets(buffer, sizeof(buffer), fp) != NULL){
-        sscanf(buffer, "%d, %99[^,], %d, %c, %c\n", &id, buffer_nome, &idade, buffer_gravidade, buffer_tipo);
-        hospital = cria_paciente(id, buffer_nome, idade, buffer_gravidade, buffer_tipo); //cria uma "caixa" pra cada paciente
-        no = cria_no(hospital);
-        add_cauda(lista, no);
-    }
-    fclose(fp);
-    return lista;
-}
-
-hospital_t *cria_paciente(int id, char *nome, int idade, char *gravidade, char *tipo){
-    hospital_t *hospital;
-    hospital = malloc(sizeof(hospital_t));
-
-    hospital->id = id;
-
-    hospital->nome = malloc(sizeof(char)*(strlen(nome)+1));
-    strcpy(hospital->nome, nome);
-
-    hospital->idade = idade;
-    hospital->gravidade = gravidade;
-    hospital->tipo = tipo;
-
-    return hospital;
-}
-
-void imprimir_lista(lista_enc_t *lista){
-    no_t *no;
-    no = obtem_cabeca(lista);
-
-
-
-    while(no != NULL){
-        hospital_t *hospital;
-        hospital = obtem_dado(no);
-        printf("%d, %s, %d, %c, %c\n", hospital->id, hospital->nome, hospital->idade, hospital->gravidade, hospital->tipo);
-        no = obtem_proximo(no);
+    for(i = floor(tamanho)/2; i>0; i--){
+        max_heapify(heap->paciente, i);
     }
 }
 
-void libera_geral(lista_enc_t *lista){
-    hospital_t *hospital;
-    no_t *no;
-    no_t *no_aux;
+void max_heapify(heap_t *heap, int i){
+    int e = 2*i + 1;
+    int d = 2*i + 2;
+    int maior;
 
-    no = obtem_cabeca(lista);
-    while(no != NULL){
-        hospital = obtem_dado(no);
-        free(hospital->nome);
-        free(hospital);
-        no_aux = obtem_proximo(no);
-        free(no);
-        no = no_aux;
+    if((e < heap->tam) && (compara_pacientes(heap->paciente[e], heap->paciente[i]))){
+        maior = e;
     }
+    else
+        maior = i;
 
-    free(lista);
+    if((d < heap->tam) && (compara_pacientes(heap->paciente[d], heap->paciente[maior]))){
+        maior = d;
+    }
+    if(maior != i){
+        swap(heap, i, maior);
+        max_heapify(heap, maior);
+    }
 }
-*/
+
+void swap_paciente(heap_t *heap, int i, int maior){
+    paciente_t paciente_temp;
+
+    paciente_temp = heap->paciente[i]; //um paciente
+
+    heap->paciente[i] = heap->paciente[maior];
+    heap->paciente[maior] = paciente_temp;
+}
+
+int compara_pacientes(paciente_t *paciente_1, paciente_t *paciente_2){ //1 - paciente1 tem prioridade
+    if(paciente_1->gravidade == paciente_2->gravidade){ // g-g --  l-l --  m-m
+        if((paciente_1->idade - paciente_2->idade)>0){  //compara quem é mais velho
+           return 1;
+        }
+        else
+            return 0;
+    }
+    if((paciente_1->gravidade == 'g') && (paciente_2->gravidade == 'l')){
+        return 1;
+    }
+    if((paciente_1->gravidade == 'l') && (paciente_2->gravidade == 'g')){
+        return 0;
+    }
+    if((paciente_1->gravidade == 'g') && (paciente_2->gravidade == 'm')){
+        return 1;
+    }
+    if((paciente_1->gravidade == 'm') && (paciente_2->gravidade == 'g')){
+        return 0;
+    }
+    if((paciente_1->gravidade == 'm') && (paciente_2->gravidade == 'l')){
+        return 1;
+    }
+    if((paciente_1->gravidade == 'l') && (paciente_2->gravidade == 'm')){
+        return 0;
+    }
+}
+
+void random_paciente(paciente_t *pacientes, int tamanho){ //embaralhando
+    int i, ran;
+    paciente_t paciente_copia; //um paciente - uma estrutura MESMO
+
+    for(i = 0; i< tamanho; i++){
+        paciente_copia = pacientes[i];  //copia p um auxiliar
+        ran = rand() % tamanho;         //random
+        pacientes[i] = pacientes[ran];  //troca
+        pacientes[ran] = paciente_copia;//copia
+    }
+}
+
+void libera_geral(paciente_t *paciente){
+
+}
+
+

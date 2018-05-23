@@ -8,6 +8,6 @@ int main()
 {
     int tamanho;
     leitura_dinamica(&tamanho);
-
+    prioridade_sort(&tamanho);
     return 0;
 }
