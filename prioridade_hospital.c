@@ -9,14 +9,91 @@
 #define TAM_BUFFER 100
 #define DEBUG
 
-struct hospital {
+struct paciente{
 	int id;
 	char *nome; //malloc
 	int idade;
-	char *gravidade;
-	char *tipo;
+	char gravidade;
+	char tipo;
 };
 
+paciente_t *leitura_dinamica(int* tamanho){
+    //u=urgente		l=leve		m=moderado
+    //c= cabeça     t= tronco   i=inferiores
+    FILE *fp;
+    int linhas=0,i=0;
+    char buffer[100];
+    char buffer_nome[100];
+    paciente_t *dados;
+
+    fp = fopen("hospital.csv", "r");
+    if(fp==NULL){
+        perror("fopen");
+        exit(EXIT_FAILURE);
+    }
+
+    //alocaçao pra saber quantidade de linhas
+    while(fgets(buffer, 100, fp) != NULL) linhas++;
+    printf(" linhas: %d",linhas);
+     rewind(fp);
+
+     dados = malloc(sizeof(paciente_t)*linhas);
+
+     if (dados == NULL){
+        perror("main:");
+        exit(-1);
+    }
+
+    fgets(buffer,sizeof (buffer), fp); // pegando uma linha, "pulando a linha"
+    //para saber quanto de espaço preciso pro nome
+    while(fgets(buffer,sizeof (buffer), fp)!= NULL){
+        sscanf(buffer,"%*d,%100[^,],%*d,%*c,%*c\n", buffer_nome);//salva no buffer pra saber os tamanhos
+        dados[i].nome = malloc(sizeof(char) * strlen(buffer_nome)+1);
+        //tamanho da variavel nome, * tamanho da string ("uva/o")
+        i++;
+    }
+
+     rewind(fp);
+
+    fgets(buffer,sizeof (buffer), fp); // pegando uma linha, "pulando a linha"
+    i=0;
+     // copiar do arquivo para posicoes do vetor
+    while(fgets(buffer,sizeof (buffer), fp)!= NULL){
+        sscanf(buffer, "%d,%100[^,],%d,%c,%c\n",
+               &dados[i].id,
+               dados[i].nome,
+               &dados[i].idade,
+               &dados[i].gravidade,
+               &dados[i].tipo);
+
+        printf("%d; %s; %d; %c; %c\n",dados[i].id, dados[i].nome, dados[i].idade, dados[i].gravidade, dados[i].tipo);
+        i++;
+    }
+
+    fclose(fp);
+    *tamanho = linhas;
+    return dados;
+
+}
+
+void prioridade_sort(paciente_t *dados, int tamanho){
+    if (dados == NULL){
+        perror("main:");
+        exit(-1);
+    }
+    int i=0;
+
+    while(i<)
+
+
+
+
+
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------
+/*
 hospital_t *cria_hospital(int id, char *nome, int idade, char *gravidade, char *tipo){
     hospital_t *hospital;
 
@@ -36,7 +113,7 @@ hospital_t *cria_hospital(int id, char *nome, int idade, char *gravidade, char *
 	}
 
     hospital->id = id;
-    /* Copia os dados para a lista alocada */
+    /* Copia os dados para a lista alocada
     strncpy(hospital->nome, nome, strlen(nome) + 1);
     hospital->idade = idade;
     hospital->gravidade = gravidade;
@@ -126,3 +203,4 @@ void libera_geral(lista_enc_t *lista){
 
     free(lista);
 }
+*/

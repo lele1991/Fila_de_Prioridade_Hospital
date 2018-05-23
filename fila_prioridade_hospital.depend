@@ -40,3 +40,44 @@
 	"lista_enc.h"
 	"no.h"
 
+1526926967 source:c:\users\helle\documents\github\priorityqueue_hospital\grafo.c
+	<stdlib.h>
+	<stdio.h>
+	"string.h"
+	"grafo.h"
+
+1526408775 c:\users\helle\documents\github\priorityqueue_hospital\grafo.h
+
+1526408775 source:c:\users\helle\documents\github\priorityqueue_hospital\lista_enc.c
+	<stdio.h>
+	<stdlib.h>
+	"lista_enc.h"
+	"no.h"
+
+1526408775 c:\users\helle\documents\github\priorityqueue_hospital\lista_enc.h
+	"no.h"
+
+1526408775 c:\users\helle\documents\github\priorityqueue_hospital\no.h
+
+1526931633 source:c:\users\helle\documents\github\priorityqueue_hospital\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PRIORIDADE_HOSPITAL.h"
+	"lista_enc.h"
+
+1526931514 c:\users\helle\documents\github\priorityqueue_hospital\prioridade_hospital.h
+	"lista_enc.h"
+
+1526408775 source:c:\users\helle\documents\github\priorityqueue_hospital\no.c
+	<stdio.h>
+	<stdlib.h>
+	"no.h"
+
+1526933623 source:c:\users\helle\documents\github\priorityqueue_hospital\prioridade_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"PRIORIDADE_HOSPITAL.h"
+	"lista_enc.h"
+	"no.h"
+
