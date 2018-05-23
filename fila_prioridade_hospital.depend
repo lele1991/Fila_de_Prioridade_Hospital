@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1526412476 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\grafo.c
+1526413920 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\grafo.c
 	<stdlib.h>
 	<stdio.h>
 	"string.h"
@@ -18,13 +18,13 @@
 
 1526408574 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\no.h
 
-1526412167 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\main.c
+1526413920 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\main.c
 	<stdio.h>
 	<stdlib.h>
 	"PRIORIDADE_HOSPITAL.h"
 	"lista_enc.h"
 
-1526413638 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.h
+1526413990 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.h
 	"lista_enc.h"
 
 1526408574 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\no.c
@@ -32,7 +32,7 @@
 	<stdlib.h>
 	"no.h"
 
-1526413660 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.c
+1526413920 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
