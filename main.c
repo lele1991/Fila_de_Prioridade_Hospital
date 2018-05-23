@@ -10,9 +10,5 @@ int main()
     int tamanho;
     leitura_dinamica(&tamanho);
 
-
-
-
-
     return 0;
 }
