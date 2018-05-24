@@ -30,7 +30,5 @@ printf("\n\n");
     for(i = 0; i<tamanho; i++){
         heap_prioritario(heap);
     }
-
-
     return 0;
 }
