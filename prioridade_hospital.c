@@ -87,8 +87,20 @@ printf("%d; %s; %d; %c; %c\n",dados[i].id, dados[i].nome, dados[i].idade, dados[
 
 }
 
-void heap(paciente_t *dados, heap_t *heap, int tamanho){
+void heap(paciente_t *paciente, heap_t *heap, int tamanho){
+    build_heap(heap, paciente, tamanho);
+    int i;
 
+    for(i = tamanho; i>=2; i--){
+
+
+
+    }
+
+
+}
+
+void paciente_atendido(){
 
 
 }
@@ -173,8 +185,5 @@ void random_paciente(paciente_t *pacientes, int tamanho){ //embaralhando
     }
 }
 
-void libera_geral(paciente_t *paciente){
-
-}
 
 
