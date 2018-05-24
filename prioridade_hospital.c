@@ -83,11 +83,28 @@ paciente_t *leitura_dinamica(int* tamanho) {
 
 }
 
+<<<<<<< HEAD
 heap_t *cria_heap(){
     heap_t *heap;
     heap = malloc(sizeof(heap_t));
     return heap;
 }
+=======
+void heap(paciente_t *paciente, heap_t *heap, int tamanho){
+    build_heap(heap, paciente, tamanho);
+    int i;
+
+    for(i = tamanho; i>=2; i--){
+
+
+
+    }
+
+
+}
+
+void paciente_atendido(){
+>>>>>>> Hellen
 
 void heap_prioritario(heap_t *heap) {
     max_heapify(heap, 0);   //paciente com maior prioridade
@@ -184,6 +201,7 @@ for(i = 0; i< tamanho; i++){
     printf("random:%s\n", pacientes[i].nome);
 
 
+<<<<<<< HEAD
 }
 #endif // DEBUG
 }
@@ -194,5 +212,7 @@ void libera_geral(paciente_t *paciente) {
 //    heap
 //    heap->paciente
 }
+=======
+>>>>>>> Hellen
 
 
