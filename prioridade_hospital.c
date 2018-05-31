@@ -212,9 +212,11 @@ void libera_geral(paciente_t *paciente,int tamanho ) {
     for(i = 0; i< tamanho; i++){
         free(dados[i].nome);
     }
-
     free(dados);
-    free(heap->paciente);
+    for(i = 0; i< tamanho; i++){
+         free(heap->paciente[i]);
+    }
+
     free(heap);
 
 
