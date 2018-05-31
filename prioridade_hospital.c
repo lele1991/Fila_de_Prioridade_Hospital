@@ -122,7 +122,7 @@ void build_heap(heap_t *heap, paciente_t *paciente, int tamanho) {  //cria heap 
     heap->tam = tamanho;
     int i=0;
 
-    heap->paciente = malloc((sizeof(paciente_t)*tamanho));         //cria espaço pro heap
+    heap->paciente = ((sizeof(paciente_t)*tamanho));         //cria espaço pro heap
     memcpy(heap->paciente, paciente, sizeof(paciente_t)*tamanho); //copia pro heap
 
     for(i = floor(tamanho)/2; i>0; i--) {
@@ -206,13 +206,24 @@ for(i = 0; i< tamanho; i++){
 #endif // DEBUG
 }
 
-void libera_geral(paciente_t *paciente) {
+void libera_geral(paciente_t *paciente,int tamanho ) {
+
+    //liberar o nome (malloc)
+    for(i = 0; i< tamanho; i++){
+        free(dados[i].nome);
+    }
+
+    free(dados);
+    free(heap->paciente);
+    free(heap);
+
+
+
 //    dados
 //    nome
 //    heap
 //    heap->paciente
 }
-//=======
-//>>>>>>> Hellen
+
 
 
