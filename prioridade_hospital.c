@@ -241,6 +241,3 @@ void libera_geral(paciente_t *dados, heap_t *heap){
     free(heap->paciente);       //heap->paciente
     free(heap);                         //heap
 }
-
-
-
