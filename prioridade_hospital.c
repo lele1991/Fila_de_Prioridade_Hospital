@@ -64,6 +64,7 @@ paciente_t *leitura_dinamica(int* tamanho) {
         sscanf(buffer, "%d,%100[^,],%d,%c,%c\n",
                &dados[i].id,
                dados[i].nome,
+
                &dados[i].idade,
                &dados[i].gravidade,
                &dados[i].tipo);
@@ -84,24 +85,24 @@ heap_t *cria_heap(){
     return heap;
 }
 //=======
-void heap(paciente_t *paciente, heap_t *heap, int tamanho){
-    build_heap(heap, paciente, tamanho);
-    int i;
+//void heap(paciente_t *paciente, heap_t *heap, int tamanho){
+//    build_heap(heap, paciente, tamanho);
+//    int i;
+//
+//    for(i = tamanho; i>=2; i--){
+//    }
+//}
 
-    for(i = tamanho; i>=2; i--){
-    }
-}
-
-void paciente_atendido(){
+void random_tempo(){
 //>>>>>>> Hellen
 }
 
-void build_heap(heap_t *heap, paciente_t *paciente, int tamanho) {  //cria heap de pacientes
+void build_heap(heap_t *heap, paciente_t *paciente, int tamanho) {  //cria heap de pacientes - ponteiro de ponteiro
     heap->tam = tamanho;
     int i=0;
 
-    heap->paciente = malloc((sizeof(paciente_t)*tamanho));         //cria espaço pro heap
-    memcpy(heap->paciente, paciente, sizeof(paciente_t)*tamanho); //copia pro heap
+    heap->paciente = malloc((sizeof(paciente_t )*tamanho));          //cria espaço pro heap - ponteiro de ponteiro
+    memcpy(heap->paciente, paciente, sizeof(paciente_t )*tamanho);   //copia pro heap
 
     for(i = floor(tamanho)/2; i>0; i--) {
         max_heapify(heap, i);
@@ -118,7 +119,7 @@ void max_heapify(heap_t *heap, int i) {
     } else
         maior = i;
 
-    if((d < heap->tam) && (compara_pacientes(&heap->paciente[d], &heap->paciente[maior]))) {
+    if((d < heap->tam) && (compara_pacientes(&heap->paciente[d], &heap->paciente[maior]))){
         maior = d;
     }
     if(maior != i) {
@@ -183,21 +184,24 @@ for(i = 0; i< tamanho; i++){
 }
 #endif // DEBUG
 }
+
 void heap_prioritario(heap_t *heap) {
     max_heapify(heap, 0);   //paciente com maior prioridade
-
+    int tamanho = heap->tam;
     // opera no [0]
     printf("Chamando paciente: %s\n", heap->paciente[0].nome);
     printf("Gravidade: %c\n", heap->paciente[0].gravidade);
     printf("Tipo do trauma: %c\n", heap->paciente[0].tipo);
     printf("Idade: %d\n\n", heap->paciente[0].idade);
-    swap_paciente(heap, 0, heap->tam-1);    //"tiro paciente da primeira posicao e jogo pro final
-    heap->tam --;
+    swap_paciente(heap, 0, tamanho-1);    //"tiro paciente da primeira posicao e jogo pro final
+    tamanho --;
 }
 
 void exportar_heap(const char *filename, heap_t *heap, int i){
 	FILE* file;
     int j;
+    int e = 2*i + 1;
+    int d = 2*i + 2;
 
 	if (filename == NULL || heap == NULL){
 		fprintf(stderr, "exportar_heap_dot: ponteiros invalidos\n");
@@ -209,28 +213,29 @@ void exportar_heap(const char *filename, heap_t *heap, int i){
 		perror("exportar_grafo_dot:");
 		exit(EXIT_FAILURE);
 	}
-
 	fprintf(file, "graph {\n");
-
 	/* Exporta as strings dos vértices */
-	while(heap != NULL){
+
+
+	printf("\t tam: %d \n", heap->tam);
+
+//	while(heap != NULL){
         for(j = 0; j<heap->tam; j++){
-            int e = 2*i + 1;
-            int d = 2*i + 2;
-            fprintf(file, "\t%s -- %s;\n",heap->paciente[i].nome , heap->paciente[e].nome);
-            fprintf(file, "\t%s -- %s;\n",heap->paciente[i].nome , heap->paciente[d].nome);
+            e = 2*j + 1;
+            d = 2*j + 2;
+
+            if (e < heap->tam)
+                fprintf(file, "\t%s -- %s;\n",heap->paciente[j].nome , heap->paciente[e].nome);
+            if (d < heap->tam)
+                fprintf(file, "\t%s -- %s;\n",heap->paciente[j].nome , heap->paciente[d].nome);
+            //i++;
         }
-	}
+	//}
     fprintf(file, "}\n");
 	fclose(file);
 }
 
-void libera_geral(paciente_t *dados, heap_t *heap, int tamanho){
-
-    //dados = malloc(sizeof(paciente_t)*linhas);
-   // dados[i].nome = malloc(sizeof(char) * strlen(buffer_nome)+1);
-   // heap = malloc(sizeof(heap_t));
-   // heap->paciente = malloc((sizeof(paciente_t)*tamanho));
+void libera_geral(paciente_t *dados, heap_t *heap, int *tamanho){
     int i;
     //liberar o nome (malloc)
     for(i = 0; i<tamanho; i++){

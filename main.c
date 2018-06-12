@@ -29,7 +29,7 @@ printf("\n\n");
         heap_prioritario(heap);
     }
 
-    //exportar_heap("heap_dot", heap, 0);
+    exportar_heap("heap_dot", heap, 0);
 
     libera_geral(paciente, heap, tamanho);
 
