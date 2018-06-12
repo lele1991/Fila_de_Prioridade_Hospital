@@ -84,14 +84,7 @@ heap_t *cria_heap(){
     heap = malloc(sizeof(heap_t));
     return heap;
 }
-//=======
-//void heap(paciente_t *paciente, heap_t *heap, int tamanho){
-//    build_heap(heap, paciente, tamanho);
-//    int i;
-//
-//    for(i = tamanho; i>=2; i--){
-//    }
-//}
+
 
 void random_tempo(){
 //>>>>>>> Hellen
@@ -178,23 +171,21 @@ void random_paciente(paciente_t *pacientes, int tamanho) { //embaralhando
 #ifdef DEBUG
 for(i = 0; i< tamanho; i++){
     printf("random:%s\n", pacientes[i].nome);
-
-
 <<<<<<< HEAD
 }
 #endif // DEBUG
 }
 
 void heap_prioritario(heap_t *heap) {
-    max_heapify(heap, 0);   //paciente com maior prioridade
+    max_heapify(heap, 0);                                       //paciente com maior prioridade
     int tamanho = heap->tam;
     // opera no [0]
     printf("Chamando paciente: %s\n", heap->paciente[0].nome);
     printf("Gravidade: %c\n", heap->paciente[0].gravidade);
     printf("Tipo do trauma: %c\n", heap->paciente[0].tipo);
     printf("Idade: %d\n\n", heap->paciente[0].idade);
-    swap_paciente(heap, 0, tamanho-1);    //"tiro paciente da primeira posicao e jogo pro final
-    tamanho --;
+    swap_paciente(heap, 0, heap->tam-1);                        //"tiro paciente da primeira posicao e jogo pro final
+    heap->tam --;
 }
 
 void exportar_heap(const char *filename, heap_t *heap, int i){
@@ -214,12 +205,7 @@ void exportar_heap(const char *filename, heap_t *heap, int i){
 		exit(EXIT_FAILURE);
 	}
 	fprintf(file, "graph {\n");
-	/* Exporta as strings dos vértices */
-
-
-	printf("\t tam: %d \n", heap->tam);
-
-//	while(heap != NULL){
+    printf("\t tam: %d \n", heap->tam);
         for(j = 0; j<heap->tam; j++){
             e = 2*j + 1;
             d = 2*j + 2;
@@ -228,9 +214,7 @@ void exportar_heap(const char *filename, heap_t *heap, int i){
                 fprintf(file, "\t%s -- %s;\n",heap->paciente[j].nome , heap->paciente[e].nome);
             if (d < heap->tam)
                 fprintf(file, "\t%s -- %s;\n",heap->paciente[j].nome , heap->paciente[d].nome);
-            //i++;
         }
-	//}
     fprintf(file, "}\n");
 	fclose(file);
 }

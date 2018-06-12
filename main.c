@@ -24,12 +24,13 @@ printf("\n\n");
 #endif // DEBUG
 
     build_heap(heap, paciente, tamanho);
+    exportar_heap("heap_dot", heap, 0);
 
     for(i = 0; i<tamanho; i++){
         heap_prioritario(heap);
     }
 
-    exportar_heap("heap_dot", heap, 0);
+
 
     libera_geral(paciente, heap, tamanho);
 
