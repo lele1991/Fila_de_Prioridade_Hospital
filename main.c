@@ -15,8 +15,6 @@ int main(){
 #ifdef DEBUG
 printf("\n\n");
 #endif // DEBUG
-
-
     heap_t *heap;
     heap = cria_heap();
 
@@ -30,5 +28,10 @@ printf("\n\n");
     for(i = 0; i<tamanho; i++){
         heap_prioritario(heap);
     }
+
+    exportar_heap("heap_dot", heap, 0);
+
+    libera_geral(paciente, heap);
+
     return 0;
 }
