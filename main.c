@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 
 #include "PRIORIDADE_HOSPITAL.h"
 //#define DEBUG
 int main(){
     int tamanho;
-    int i;
+    int i, ran;
+
 
     srand(time(NULL));
 
@@ -24,14 +26,14 @@ printf("\n\n");
 #endif // DEBUG
 
     build_heap(heap, paciente, tamanho);
+    exportar_heap("heap_dot", heap);
 
     for(i = 0; i<tamanho; i++){
+        ran = rand() % 9001;        //0 a 9 seg
+        Sleep(1000 + ran); //1000ms         chegando paciente
         heap_prioritario(heap);
     }
-
-    exportar_heap("heap_dot", heap, 0);
-
-    libera_geral(paciente, heap);
+    libera_geral(paciente, heap, tamanho);
 
     return 0;
 }

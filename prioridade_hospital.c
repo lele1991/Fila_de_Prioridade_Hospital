@@ -83,23 +83,18 @@ paciente_t *leitura_dinamica(int* tamanho) {
 
 }
 
-//<<<<<<< HEAD
 heap_t *cria_heap(){
     heap_t *heap;
     heap = malloc(sizeof(heap_t));
     return heap;
 }
-//=======
+
 void heap(paciente_t *paciente, heap_t *heap, int tamanho){
     build_heap(heap, paciente, tamanho);
     int i;
 
     for(i = tamanho; i>=2; i--){
     }
-}
-
-void paciente_atendido(){
-//>>>>>>> Hellen
 }
 
 void build_heap(heap_t *heap, paciente_t *paciente, int tamanho) {  //cria heap de pacientes
@@ -183,13 +178,12 @@ void random_paciente(paciente_t *pacientes, int tamanho) { //embaralhando
 #ifdef DEBUG
 for(i = 0; i< tamanho; i++){
     printf("random:%s\n", pacientes[i].nome);
-
-
 <<<<<<< HEAD
 }
 #endif // DEBUG
 }
-void heap_prioritario(heap_t *heap) {
+
+void heap_prioritario(heap_t *heap) {   //paciente atendido vai pro final
     max_heapify(heap, 0);   //paciente com maior prioridade
 
     // opera no [0]
@@ -201,15 +195,13 @@ void heap_prioritario(heap_t *heap) {
     heap->tam --;
 }
 
-void exportar_heap(const char *filename, heap_t *heap, int i){
+void exportar_heap(const char *filename, heap_t *heap){
 	FILE* file;
     int j;
-
 	if (filename == NULL || heap == NULL){
 		fprintf(stderr, "exportar_heap_dot: ponteiros invalidos\n");
 		exit(EXIT_FAILURE);
 	}
-
 	file = fopen(filename, "w");
 	if (file == NULL){
 		perror("exportar_grafo_dot:");
@@ -219,25 +211,25 @@ void exportar_heap(const char *filename, heap_t *heap, int i){
 	fprintf(file, "graph {\n");
 
 	/* Exporta as strings dos vértices */
-	while(heap != NULL){
-        for(j = 0; j<heap->tam; j++){
-            int e = 2*i + 1;
-            int d = 2*i + 2;
-            fprintf(file, "\t%s -- %s;\n",heap->paciente[i].nome , heap->paciente[e].nome);
-            fprintf(file, "\t%s -- %s;\n",heap->paciente[i].nome , heap->paciente[d].nome);
-        }
-	}
+    for(j = 0; j<heap->tam; j++){
+        int e = 2*j + 1;
+        int d = 2*j + 2;
+        if(e<heap->tam)
+            fprintf(file, "\t \"%s\" -- \"%s\";\n",heap->paciente[j].nome , heap->paciente[e].nome);
+        if(d<heap->tam)
+            fprintf(file, "\t \"%s\" -- \"%s\";\n",heap->paciente[j].nome , heap->paciente[d].nome);
+    }
     fprintf(file, "}\n");
 	fclose(file);
 }
 
-void libera_geral(paciente_t *dados, heap_t *heap){
+void libera_geral(paciente_t *dados, heap_t *heap, int *tamanho){
     int i;
     //liberar o nome (malloc)
-    for(i = 0; i<100; i++){
-        free(dados[i].nome);            //nome
+    for(i = 0; i<tamanho; i++){
+        free(dados[i].nome);     //nome
     }
-    free(dados);                        //dados
+    free(dados);                 //dados
     free(heap->paciente);       //heap->paciente
-    free(heap);                         //heap
+    free(heap);                //heap
 }

@@ -16,7 +16,7 @@ void swap_paciente(heap_t *heap, int i, int maior);
 void random_paciente(paciente_t *pacientes, int tamanho);
 int compara_pacientes(paciente_t *paciente_1, paciente_t *paciente_2);
 
-void exportar_heap(const char *filename, heap_t *heap, int i);
-void libera_geral(paciente_t *paciente, heap_t *heap);
+void exportar_heap(const char *filename, heap_t *heap);
+void libera_geral(paciente_t *paciente, heap_t *heap, int *tamanho);
 
 #endif // PRIORIDADE_HOSPITAL_H_INCLUDED
