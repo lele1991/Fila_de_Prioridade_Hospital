@@ -64,7 +64,6 @@ paciente_t *leitura_dinamica(int* tamanho) {
         sscanf(buffer, "%d,%100[^,],%d,%c,%c\n",
                &dados[i].id,
                dados[i].nome,
-
                &dados[i].idade,
                &dados[i].gravidade,
                &dados[i].tipo);
@@ -84,7 +83,11 @@ heap_t *cria_heap(){
     heap = malloc(sizeof(heap_t));
     return heap;
 }
+<<<<<<< HEAD
 
+=======
+//=======
+>>>>>>> b4868b0fbf223680d1e9ef858ad50a856bd007a0
 
 void random_tempo(){
 //>>>>>>> Hellen
@@ -180,19 +183,24 @@ void heap_prioritario(heap_t *heap) {
     max_heapify(heap, 0);                                       //paciente com maior prioridade
     int tamanho = heap->tam;
     // opera no [0]
+//#ifdef DEBUG
     printf("Chamando paciente: %s\n", heap->paciente[0].nome);
     printf("Gravidade: %c\n", heap->paciente[0].gravidade);
     printf("Tipo do trauma: %c\n", heap->paciente[0].tipo);
     printf("Idade: %d\n\n", heap->paciente[0].idade);
+<<<<<<< HEAD
     swap_paciente(heap, 0, heap->tam-1);                        //"tiro paciente da primeira posicao e jogo pro final
     heap->tam --;
+=======
+//#endif // DEBUG
+    swap_paciente(heap, 0, tamanho-1);    //"tiro paciente da primeira posicao e jogo pro final
+    tamanho --;
+>>>>>>> b4868b0fbf223680d1e9ef858ad50a856bd007a0
 }
 
 void exportar_heap(const char *filename, heap_t *heap, int i){
 	FILE* file;
-    int j;
-    int e = 2*i + 1;
-    int d = 2*i + 2;
+    int j, e, d;
 
 	if (filename == NULL || heap == NULL){
 		fprintf(stderr, "exportar_heap_dot: ponteiros invalidos\n");
@@ -205,15 +213,25 @@ void exportar_heap(const char *filename, heap_t *heap, int i){
 		exit(EXIT_FAILURE);
 	}
 	fprintf(file, "graph {\n");
+<<<<<<< HEAD
     printf("\t tam: %d \n", heap->tam);
+=======
+	/* Exporta as strings dos vértices */
+
+//	while(heap != NULL){
+>>>>>>> b4868b0fbf223680d1e9ef858ad50a856bd007a0
         for(j = 0; j<heap->tam; j++){
             e = 2*j + 1;
             d = 2*j + 2;
 
             if (e < heap->tam)
-                fprintf(file, "\t%s -- %s;\n",heap->paciente[j].nome , heap->paciente[e].nome);
+                fprintf(file, "\t\"%s\" -- \"%s\";\n",heap->paciente[j].nome , heap->paciente[e].nome);
             if (d < heap->tam)
+<<<<<<< HEAD
                 fprintf(file, "\t%s -- %s;\n",heap->paciente[j].nome , heap->paciente[d].nome);
+=======
+                fprintf(file, "\t\"%s\" -- \"%s\";\n",heap->paciente[j].nome , heap->paciente[d].nome);
+>>>>>>> b4868b0fbf223680d1e9ef858ad50a856bd007a0
         }
     fprintf(file, "}\n");
 	fclose(file);

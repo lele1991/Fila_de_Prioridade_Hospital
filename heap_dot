@@ -1,4 +1,5 @@
 graph {
+<<<<<<< HEAD
 	Diesson Stefano Allebrandt -- Etelvina Benancio dos Santos;
 	Diesson Stefano Allebrandt -- Rosa Teixeira Lima;
 	Etelvina Benancio dos Santos -- Anisio Rodrigues Alves;
@@ -37,4 +38,44 @@ graph {
 	Hellen Avila Rosa -- Bruna Martini;
 	Osorio Lopes de Santana -- Maria Olivia da Silva;
 	Osorio Lopes de Santana -- Adao da Silva;
+=======
+	"Anisio Rodrigues Alves" -- "Rosa Teixeira Lima";
+	"Anisio Rodrigues Alves" -- "Maria Domingas Vaz de Lima";
+	"Rosa Teixeira Lima" -- "Alexsandro Gehlen";
+	"Rosa Teixeira Lima" -- "Ana Martinha da Silva";
+	"Maria Domingas Vaz de Lima" -- "Ana Claudia Banderchuk";
+	"Maria Domingas Vaz de Lima" -- "Maria Rita de Menezes";
+	"Alexsandro Gehlen" -- "Marieli Matos";
+	"Alexsandro Gehlen" -- "Diesson Stefano Allebrandt";
+	"Ana Martinha da Silva" -- "Pedra Bento";
+	"Ana Martinha da Silva" -- "Maximiano Jose dos Santos";
+	"Ana Claudia Banderchuk" -- "Presolina Coelho";
+	"Ana Claudia Banderchuk" -- "Hellen Avila Rosa";
+	"Maria Rita de Menezes" -- "Leticia de Oliveira Nunes";
+	"Maria Rita de Menezes" -- "Osorio Lopes de Santana";
+	"Marieli Matos" -- "Liberalino Ferreira Leite";
+	"Marieli Matos" -- "Maria Olivia da Silva";
+	"Diesson Stefano Allebrandt" -- "Alipio Francelino da Silva";
+	"Diesson Stefano Allebrandt" -- "Daniel Lohmann";
+	"Pedra Bento" -- "Francisco Mateus de Santana";
+	"Pedra Bento" -- "Silvina Rosa de Jesus";
+	"Maximiano Jose dos Santos" -- "Maria Gomes Valentim";
+	"Maximiano Jose dos Santos" -- "Leticia Ferreira de Souza";
+	"Presolina Coelho" -- "Geraldo Tabuleta";
+	"Presolina Coelho" -- "Maria de Xango";
+	"Hellen Avila Rosa" -- "Adao da Silva";
+	"Hellen Avila Rosa" -- "Maria do Carmo Geronimo";
+	"Leticia de Oliveira Nunes" -- "Maria Benedita da Conceicao";
+	"Leticia de Oliveira Nunes" -- "Deraldo Magno Santos";
+	"Osorio Lopes de Santana" -- "Doralina Borba";
+	"Osorio Lopes de Santana" -- "Placida do Livramento";
+	"Liberalino Ferreira Leite" -- "Hazael dos Santos Batista";
+	"Liberalino Ferreira Leite" -- "Celanira Monteiro";
+	"Maria Olivia da Silva" -- "Bruna Martini";
+	"Maria Olivia da Silva" -- "Vamile Sybrin";
+	"Alipio Francelino da Silva" -- "Maria Etelvina dos Santos";
+	"Alipio Francelino da Silva" -- "Felipe Broering";
+	"Daniel Lohmann" -- "Maria Claudia Rosa Negri";
+	"Daniel Lohmann" -- "Etelvina Benancio dos Santos";
+>>>>>>> b4868b0fbf223680d1e9ef858ad50a856bd007a0
 }

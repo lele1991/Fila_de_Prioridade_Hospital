@@ -9,7 +9,6 @@ int main(){
     int i;
 
     srand(time(NULL));
-
     paciente_t *paciente;
     paciente = leitura_dinamica(&tamanho);
 #ifdef DEBUG
@@ -22,7 +21,6 @@ printf("\n\n");
 #ifdef DEBUG
 printf("\n\n");
 #endif // DEBUG
-
     build_heap(heap, paciente, tamanho);
     exportar_heap("heap_dot", heap, 0);
 
