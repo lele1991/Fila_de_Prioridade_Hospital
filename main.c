@@ -31,7 +31,10 @@ printf("\n\n");
 
     //exportar_heap("heap_dot", heap, 0);
 
-    libera_geral(paciente, heap);
+    libera_geral(paciente, heap, tamanho);
 
     return 0;
 }
+
+
+//github readme.template

@@ -225,17 +225,15 @@ void exportar_heap(const char *filename, heap_t *heap, int i){
 	fclose(file);
 }
 
-void libera_geral(paciente_t *dados, heap_t *heap){
+void libera_geral(paciente_t *dados, heap_t *heap, int tamanho){
 
- //   dados = malloc(sizeof(paciente_t)*linhas);
+    //dados = malloc(sizeof(paciente_t)*linhas);
    // dados[i].nome = malloc(sizeof(char) * strlen(buffer_nome)+1);
    // heap = malloc(sizeof(heap_t));
    // heap->paciente = malloc((sizeof(paciente_t)*tamanho));
-
-
     int i;
     //liberar o nome (malloc)
-    for(i = 0; i<100; i++){
+    for(i = 0; i<tamanho; i++){
         free(dados[i].nome);            //nome
     }
     free(dados);                        //dados
