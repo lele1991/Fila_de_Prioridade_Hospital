@@ -1,42 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
-<<<<<<< HEAD
-	<ActiveTarget name="Release" />
-	<File name="main.c" open="1" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="482" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="prioridade_hospital.c" open="1" top="1" tabpos="29" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2453" topLine="21" />
-		</Cursor>
-		<Folding>
-			<Collapse line="23" />
-			<Collapse line="81" />
-			<Collapse line="130" />
-			<Collapse line="139" />
-			<Collapse line="167" />
-=======
 	<ActiveTarget name="Debug" />
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="551" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="PRIORIDADE_HOSPITAL.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="PRIORIDADE_HOSPITAL.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="677" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="prioridade_hospital.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5158" topLine="168" />
+			<Cursor1 position="551" topLine="9" />
 		</Cursor>
-		<Folding>
-			<Collapse line="222" />
->>>>>>> 4838502fedc3eba974a3d7d0a46743b5cf65155a
-		</Folding>
+	</File>
+	<File name="prioridade_hospital.c" open="1" top="1" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6620" topLine="192" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
