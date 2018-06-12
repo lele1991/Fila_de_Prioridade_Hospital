@@ -110,7 +110,7 @@ void build_heap(heap_t *heap, paciente_t *paciente, int tamanho) {  //cria heap 
     heap->paciente = malloc((sizeof(paciente_t )*tamanho));          //cria espaço pro heap - ponteiro de ponteiro
     memcpy(heap->paciente, paciente, sizeof(paciente_t )*tamanho);   //copia pro heap
 
-    for(i = floor(tamanho)/2; i>0; i--) {
+    for(i = floor(tamanho)/2-1; i>=0; i--) {
         max_heapify(heap, i);
     }
 }
@@ -258,9 +258,9 @@ void exportar_heap(const char *filename, heap_t *heap){
         int e = 2*j + 1;
         int d = 2*j + 2;
         if(e<heap->tam)
-            fprintf(file, "\t \"%s\" -- \"%s\";\n",heap->paciente[j].nome , heap->paciente[e].nome);
+            fprintf(file, "\t \"%s - %c\" -- \"%s - %c\";\n",heap->paciente[j].nome , heap->paciente[j].gravidade, heap->paciente[e].nome, heap->paciente[e].gravidade);
         if(d<heap->tam)
-            fprintf(file, "\t \"%s\" -- \"%s\";\n",heap->paciente[j].nome , heap->paciente[d].nome);
+            fprintf(file, "\t \"%s - %c\" -- \"%s - %c\";\n",heap->paciente[j].nome , heap->paciente[j].gravidade, heap->paciente[d].nome, heap->paciente[d].gravidade);
     }
 >>>>>>> Leticia
     fprintf(file, "}\n");
