@@ -226,6 +226,3 @@ void libera_geral(paciente_t *paciente,int tamanho ) {
 //    heap
 //    heap->paciente
 }
-
-
-
