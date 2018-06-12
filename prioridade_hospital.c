@@ -48,7 +48,6 @@ paciente_t *leitura_dinamica(int* tamanho) {
         perror("main:");
         exit(-1);
     }
-
     fgets(buffer,sizeof (buffer), fp); // pegando uma linha, "pulando a linha"
     //para saber quanto de espaço preciso pro nome
     while(fgets(buffer,sizeof (buffer), fp)!= NULL) {
@@ -56,9 +55,7 @@ paciente_t *leitura_dinamica(int* tamanho) {
         dados[i].nome = malloc(sizeof(char) * strlen(buffer_nome)+1);
         i++;
     }
-
     rewind(fp);
-
     fgets(buffer,sizeof (buffer), fp); // pegando uma linha, "pulando a linha"
     i=0;
 
@@ -70,17 +67,14 @@ paciente_t *leitura_dinamica(int* tamanho) {
                &dados[i].idade,
                &dados[i].gravidade,
                &dados[i].tipo);
-
 #ifdef DEBUG
         printf("%d; %s; %d; %c; %c\n",dados[i].id, dados[i].nome, dados[i].idade, dados[i].gravidade, dados[i].tipo);
 #endif // DEBUG
         i++;
     }
-
     fclose(fp);
     *tamanho = linhas;
     return dados;
-
 }
 
 //<<<<<<< HEAD
@@ -232,12 +226,19 @@ void exportar_heap(const char *filename, heap_t *heap, int i){
 }
 
 void libera_geral(paciente_t *dados, heap_t *heap){
+
+ //   dados = malloc(sizeof(paciente_t)*linhas);
+   // dados[i].nome = malloc(sizeof(char) * strlen(buffer_nome)+1);
+   // heap = malloc(sizeof(heap_t));
+   // heap->paciente = malloc((sizeof(paciente_t)*tamanho));
+
+
     int i;
     //liberar o nome (malloc)
     for(i = 0; i<100; i++){
         free(dados[i].nome);            //nome
     }
     free(dados);                        //dados
-    free(heap->paciente);       //heap->paciente
+    free(heap->paciente);               //heap->paciente
     free(heap);                         //heap
 }
