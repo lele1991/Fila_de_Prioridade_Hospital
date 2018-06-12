@@ -18,20 +18,28 @@
 
 1526408574 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\no.h
 
+<<<<<<< HEAD
 1528832397 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\main.c
+=======
+1528834496 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\main.c
+>>>>>>> Leticia
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	"PRIORIDADE_HOSPITAL.h"
 
+<<<<<<< HEAD
 1528832397 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.h
+=======
+1528834497 c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.h
+>>>>>>> Leticia
 
 1526408574 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\no.c
 	<stdio.h>
 	<stdlib.h>
 	"no.h"
 
-1527792978 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.c
+1528834814 source:c:\users\lêfeiosa\documents\github\priorityqueue_hospital\prioridade_hospital.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
