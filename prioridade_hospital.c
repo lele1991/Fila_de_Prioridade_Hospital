@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include <math.h>
-
+#include <windows.h>
 #include "PRIORIDADE_HOSPITAL.h"
 #define TAM_BUFFER 100
 //#define DEBUG
@@ -99,10 +99,11 @@ void heap(paciente_t *paciente, heap_t *heap, int tamanho){
 
 void build_heap(heap_t *heap, paciente_t *paciente, int tamanho) {  //cria heap de pacientes
     heap->tam = tamanho;
-    int i=0;
+    int i=0,j;
 
     heap->paciente = malloc((sizeof(paciente_t)*tamanho));         //cria espaço pro heap
     memcpy(heap->paciente, paciente, sizeof(paciente_t)*tamanho); //copia pro heap
+
 
     for(i = floor(tamanho)/2-1; i>=0; i--) {
         max_heapify(heap, i);
@@ -174,13 +175,19 @@ void random_paciente(paciente_t *pacientes, int tamanho) { //embaralhando
         ran = rand() % tamanho;         //random
         pacientes[i] = pacientes[ran];  //troca
         pacientes[ran] = paciente_copia;//copia
-    }
+        printf("paciente: %s \n",pacientes[i].nome);
+
+
+     }
 #ifdef DEBUG
 for(i = 0; i< tamanho; i++){
     printf("random:%s\n", pacientes[i].nome);
 }
 #endif // DEBUG
 }
+
+
+
 
 void heap_prioritario(heap_t *heap) {   //paciente atendido vai pro final
     max_heapify(heap, 0);   //paciente com maior prioridade
