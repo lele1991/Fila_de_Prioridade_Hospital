@@ -178,7 +178,6 @@ void random_paciente(paciente_t *pacientes, int tamanho) { //embaralhando
 #ifdef DEBUG
 for(i = 0; i< tamanho; i++){
     printf("random:%s\n", pacientes[i].nome);
-<<<<<<< HEAD
 }
 #endif // DEBUG
 }
