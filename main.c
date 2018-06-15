@@ -29,8 +29,8 @@ printf("\n\n");
     exportar_heap("heap_dot", heap);
 
     for(i = 0; i<tamanho; i++){
-        ran = rand() % 7001;        //0 a 9 seg
-        Sleep(1000 + ran); //1000ms         chegando paciente
+        ran = rand() % 7001;            //0 a 7 seg
+        Sleep(1000 + ran);              //1000ms chegando paciente
         heap_prioritario(heap);
     }
     libera_geral(paciente, heap, tamanho);
