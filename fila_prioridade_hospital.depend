@@ -68,20 +68,21 @@
 
 1526408775 c:\users\helle\documents\github\priorityqueue_hospital\no.h
 
-1528805396 source:c:\users\helle\documents\github\priorityqueue_hospital\main.c
+1529069941 source:c:\users\helle\documents\github\priorityqueue_hospital\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+	<windows.h>
 	"PRIORIDADE_HOSPITAL.h"
 
-1528803523 c:\users\helle\documents\github\priorityqueue_hospital\prioridade_hospital.h
+1529069941 c:\users\helle\documents\github\priorityqueue_hospital\prioridade_hospital.h
 
 1526408775 source:c:\users\helle\documents\github\priorityqueue_hospital\no.c
 	<stdio.h>
 	<stdlib.h>
 	"no.h"
 
-1528805464 source:c:\users\helle\documents\github\priorityqueue_hospital\prioridade_hospital.c
+1529069941 source:c:\users\helle\documents\github\priorityqueue_hospital\prioridade_hospital.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
