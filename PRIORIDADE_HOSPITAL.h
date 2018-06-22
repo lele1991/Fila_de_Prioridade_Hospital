@@ -8,9 +8,6 @@ typedef struct heap heap_t;
 paciente_t *leitura_dinamica(int* tamanho);
 heap_t *cria_heap();
 
-
-
-
 void heap_prioritario(heap_t *heap);
 void build_heap(heap_t *heap, paciente_t *paciente, int tamanho);
 void max_heapify(heap_t *heap, int i);

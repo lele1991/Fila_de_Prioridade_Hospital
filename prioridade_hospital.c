@@ -99,7 +99,7 @@ void heap(paciente_t *paciente, heap_t *heap, int tamanho){
 
 void build_heap(heap_t *heap, paciente_t *paciente, int tamanho) {  //cria heap de pacientes
     heap->tam = tamanho;
-    int i=0,j;
+    int i=0;
 
     heap->paciente = malloc((sizeof(paciente_t)*tamanho));         //cria espaço pro heap
     memcpy(heap->paciente, paciente, sizeof(paciente_t)*tamanho); //copia pro heap
@@ -185,9 +185,6 @@ for(i = 0; i< tamanho; i++){
 }
 #endif // DEBUG
 }
-
-
-
 
 void heap_prioritario(heap_t *heap) {   //paciente atendido vai pro final
     max_heapify(heap, 0);   //paciente com maior prioridade
