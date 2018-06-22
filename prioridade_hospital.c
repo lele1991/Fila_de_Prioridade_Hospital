@@ -176,8 +176,6 @@ void random_paciente(paciente_t *pacientes, int tamanho) { //embaralhando
         pacientes[i] = pacientes[ran];  //troca
         pacientes[ran] = paciente_copia;//copia
         printf("paciente: %s \n",pacientes[i].nome);
-
-
      }
 #ifdef DEBUG
 for(i = 0; i< tamanho; i++){
@@ -218,9 +216,11 @@ void exportar_heap(const char *filename, heap_t *heap){
         int e = 2*j + 1;
         int d = 2*j + 2;
         if(e<heap->tam)
-            fprintf(file, "\t \"%s - %c\" -- \"%s - %c\";\n",heap->paciente[j].nome , heap->paciente[j].gravidade, heap->paciente[e].nome, heap->paciente[e].gravidade);
+            fprintf(file, "\t \"%s - %c - %d\" -- \"%s - %c - %d\";\n",heap->paciente[j].nome, heap->paciente[j].gravidade, heap->paciente[j].idade,
+                                                                       heap->paciente[e].nome, heap->paciente[e].gravidade, heap->paciente[e].idade);
         if(d<heap->tam)
-            fprintf(file, "\t \"%s - %c\" -- \"%s - %c\";\n",heap->paciente[j].nome , heap->paciente[j].gravidade, heap->paciente[d].nome, heap->paciente[d].gravidade);
+            fprintf(file, "\t \"%s - %c - %d\" -- \"%s - %c - %d\";\n",heap->paciente[j].nome, heap->paciente[j].gravidade, heap->paciente[j].idade,
+                                                                       heap->paciente[d].nome, heap->paciente[d].gravidade, heap->paciente[d].idade);
     }
     fprintf(file, "}\n");
 	fclose(file);

@@ -27,6 +27,7 @@ printf("\n\n");
 
     build_heap(heap, paciente, tamanho);
     exportar_heap("heap_dot", heap);
+    printf("\n\n");
 
     for(i = 0; i<tamanho; i++){
         ran = rand() % 7001;            //0 a 7 seg
